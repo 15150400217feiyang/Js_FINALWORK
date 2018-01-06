@@ -18,7 +18,12 @@
     <link href="css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <style type="text/css">
+        .btn-default {
 
+            border-color: slateblue;
+        }
+    </style>
 </head>
 
 <body>
@@ -39,286 +44,289 @@
     </div>
 
 
-    <!-- MENU SECTION END-->
+
     <div class="content-wrapper">
         <div class="container">
             <div class="row pad-botm">
-                <div class="col-md-11">
-                    <h4 class="header-line">图书管理系统</h4>
-               
-            </div>
-            <div class="col-md-1">
-                <input type="submit"
+                <div class="row">
+                    <div class="col-md-9">
+                        <h4 class="header-line">图书管理系统</h4>
 
-name="button" id="button" value="添加" onclick="addSort();">
-            
-                </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-6">
-                    <div class="alert alert-info back-widget-set text-center">
-                        
-                        <h3>书名&nbsp; </h3>
-                       
-                       <input name="bkno" type="text" id="bkno"
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group">
 
-size="30"/>
+                            <input type="text" id="myInput" placeholder="搜索..." class="form-control">
+                            <span onclick="myFunction()" class="input-group-addon btn btn-primary">搜索</span></div>
 
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-6">
-                    <div class="alert alert-success back-widget-set text-center">
-                       
-                        <h3>书条形码</h3>
-                        <input name="bknum" type="text" id="bknum"
-
-size="30"/>
-
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-6">
-                    <div class="alert alert-warning back-widget-set text-center">
-                        
-                        <h3>作者名</h3>
-                        <input name="bkname" type="text"
-
-id="bkname" size="30" />
+                <br>
+                <br>
 
 
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-6">
-                    <div class="alert alert-danger back-widget-set text-center">
-                       
-                        <h3>出版社</h3><input name="bkauthor" type="text"
-
-id="bkauthor" size="30"/>
-
-
-                        
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-6">
-                    <div class="alert alert-danger back-widget-set text-center">
-                       
-                        <h3>定价</h3>
-                        <input name="bkprice" type="text"
-
-id="bkprice" size="10" />
-
-
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-6">
-                    <div class="alert alert-danger back-widget-set text-center">
-                        
-                        <h3> 数量</h3>
-                      <input name="bkyear" type="text" id="bkyear" size="10"
-
-/>
-
-
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">
-                            
+                <div class="row">
+                    <div class="col-md-2 col-sm-4 col-xs-6">
+                        <div class="alert alert-info back-widget-set text-center">
+                            <h3>书名&nbsp; </h3>
+                            <input name="bkno" type="text" id="bkno" size="15" />
                         </div>
-                        
-                        
-<!--                        图书管理系统-->
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover">
-                                    
-<tr valign="bottom">
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6">
+                        <div class="alert alert-success back-widget-set text-center">
 
-<td colspan="7" ><a name="003">现存图书列表</a></td>
+                            <h3>书条形码</h3>
+                            <input name="bknum" type="text" id="bknum" size="15" />
 
-</tr>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6">
+                        <div class="alert alert-warning back-widget-set text-center">
 
-<tr >
+                            <h3>作者名</h3>
+                            <input name="bkname" type="text" id="bkname" size="15" />
 
-<th width="300">书名</th>
 
-<th width="200">书条形码</th>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6">
+                        <div class="alert alert-danger back-widget-set text-center">
 
-<th width="120">作者名</th>
-
-<th width="120">出版社</th>
-
-<th width="120">定价</th>
-
-<th width="120">数量</th>
+                            <h3>出版社</h3><input name="bkauthor" type="text" id="bkauthor" size="15" />
 
 
 
-</tr>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6">
+                        <div class="alert alert-danger back-widget-set text-center">
 
-<tbody id="sortList">
+                            <h3>定价</h3>
+                            <input name="bkprice" type="text" id="bkprice" size="10" />
 
-</tbody>
 
-</table>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6">
+                        <div class="alert alert-danger back-widget-set text-center">
+
+                            <h3> 数量</h3>
+                            <input name="bkyear" type="text" id="bkyear" size="10" />
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <!--                <input type="submit"name="button" id="button" value="添加" onclick="addSort(); " >-->
+                    <button name="button" id="button" onclick="addSort(); " class="btn btn-default btn-block">
+             添加图书相关信息
+           </button>
+
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                            </div>
+                            <!--                        图书管理系统-->
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover " id="myTable">
+
+                                        <tr valign="bottom">
+
+                                            <td colspan="7"><a name="003">现存图书列表</a></td>
+
+                                        </tr>
+
+                                        <tr>
+
+                                            <th width="300">书名</th>
+
+                                            <th width="200">书条形码</th>
+
+                                            <th width="120">作者名</th>
+
+                                            <th width="120">出版社</th>
+
+                                            <th width="120">定价</th>
+
+                                            <th width="120">数量</th>
+
+
+
+                                        </tr>
+
+                                        <tbody id="sortList">
+
+                                        </tbody>
+
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
     </div>
-    </div>
 
 
-    <!-- CONTENT-WRAPPER SECTION END-->
+
     <section class="footer-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                  费洋</div>
+                    费洋</div>
 
             </div>
         </div>
     </section>
 
 
-<script language="javascript" type="text/javascript">
-function myFunction() {
-  // 声明变量
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
+    <script language="javascript" type="text/javascript">
+        function myFunction() {
+            // 声明变量
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
 
-  // 循环表格每一行，查找匹配项
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
-  }
-}
-// 增加成员函数
+            // 循环表格每一行，查找匹配项
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+            
+            
+            
+        }
+        // 增加成员函数
 
-function addSort() {
+        function addSort() {
 
-var name = document.getElementById("bkno").value;//获取ID属性值为name的元素
+            var name = document.getElementById("bkno").value; //获取ID属性值为name的元素
 
-// if(name == "" ) {
+            // if(name == "" ) {
 
-// return;
+            // return;
 
-// }
+            // }
 
-//创建元素tr，并设置ID属性为name。即表格中的行
+            //创建元素tr，并设置ID属性为name。即表格中的行
 
-var row = document.createElement("tr");
+            var row = document.createElement("tr");
 
-row.setAttribute("id", document.getElementById("bkno").value);
+            row.setAttribute("id", document.getElementById("bkno").value);
 
-//创建元素td,并追加为元素tr的子元素
+            //创建元素td,并追加为元素tr的子元素
 
-var cell = document.createElement("td");
+            var cell = document.createElement("td");
 
-cell.appendChild(document.createTextNode(document.getElementById("bkno").value));
+            cell.appendChild(document.createTextNode(document.getElementById("bkno").value));
 
-row.appendChild(cell);
+            row.appendChild(cell);
 
-//创建元素td,并追加为元素tr的子元素
+            //创建元素td,并追加为元素tr的子元素
 
-var cell = document.createElement("td");
+            var cell = document.createElement("td");
 
-cell.appendChild(document.createTextNode(document.getElementById("bknum").value));
+            cell.appendChild(document.createTextNode(document.getElementById("bknum").value));
 
-row.appendChild(cell); 
+            row.appendChild(cell);
 
-//创建元素td,并追加为元素tr的子元素
+            //创建元素td,并追加为元素tr的子元素
 
-var cell = document.createElement("td");
+            var cell = document.createElement("td");
 
-cell.appendChild(document.createTextNode(document.getElementById("bkname").value));
+            cell.appendChild(document.createTextNode(document.getElementById("bkname").value));
 
-row.appendChild(cell);
+            row.appendChild(cell);
 
-//创建元素td,并追加为元素tr的子元素
+            //创建元素td,并追加为元素tr的子元素
 
-var cell = document.createElement("td");
+            var cell = document.createElement("td");
 
-cell.appendChild(document.createTextNode(document.getElementById("bkprice").value));
+            cell.appendChild(document.createTextNode(document.getElementById("bkprice").value));
 
-row.appendChild(cell);
+            row.appendChild(cell);
 
-//创建元素td,并追加为元素tr的子元素
+            //创建元素td,并追加为元素tr的子元素
 
-var cell = document.createElement("td");
+            var cell = document.createElement("td");
 
-cell.appendChild(document.createTextNode(document.getElementById("bkauthor").value));
+            cell.appendChild(document.createTextNode(document.getElementById("bkauthor").value));
 
-row.appendChild(cell);
+            row.appendChild(cell);
 
-//创建元素td,并追加为元素tr的子元素
+            //创建元素td,并追加为元素tr的子元素
 
-var cell = document.createElement("td");
+            var cell = document.createElement("td");
 
-cell.appendChild(document.createTextNode(document.getElementById("bkyear").value));
+            cell.appendChild(document.createTextNode(document.getElementById("bkyear").value));
 
-row.appendChild(cell);
+            row.appendChild(cell);
 
-//创建元素td,并追加为元素tr的子元素
+            //创建元素td,并追加为元素tr的子元素
 
 
 
-//创建元素删除按钮
+            //创建元素删除按钮
 
-var deleteButton = document.createElement("input");
+            var deleteButton = document.createElement("input");
 
-deleteButton.setAttribute("type", "button");
+            deleteButton.setAttribute("type", "button");
 
-deleteButton.setAttribute("value", "删除");
+            deleteButton.setAttribute("value", "删除");
 
-deleteButton.onclick = function () { deleteSort(name); };
+            deleteButton.onclick = function() {
+                deleteSort(name);
+            };
 
-cell = document.createElement("td");
+            cell = document.createElement("td");
 
-cell.appendChild(deleteButton);
+            cell.appendChild(deleteButton);
 
-row.appendChild(cell);
+            row.appendChild(cell);
 
-//添加deleteButton元素
+            //添加deleteButton元素
 
-document.getElementById("sortList").appendChild(row);
+            document.getElementById("sortList").appendChild(row);
 
-//清空输入框
+            //清空输入框
 
-document.getElementById("name").value ="";
+            document.getElementById("name").value = "";
 
-}
+        }
 
-// 删除成员函数
+        // 删除成员函数
 
-function deleteSort(id) {
+        function deleteSort(id) {
 
-if (id!=null){
+            if (id != null) {
 
-var delRow= document.getElementById(id);
+                var delRow = document.getElementById(id);
 
-var sortList= document.getElementById("sortList");
+                var sortList = document.getElementById("sortList");
 
-sortList.removeChild(delRow);
+                sortList.removeChild(delRow);
 
-}
+            }
 
-}
+        }
+    </script>
 
-</script>
 </body>
 
 </html>
