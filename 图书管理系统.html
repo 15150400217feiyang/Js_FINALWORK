@@ -43,52 +43,80 @@
     <div class="content-wrapper">
         <div class="container">
             <div class="row pad-botm">
-                <div class="col-md-12">
+                <div class="col-md-11">
                     <h4 class="header-line">图书管理系统</h4>
-
-                </div>
+               
             </div>
+            <div class="col-md-1">
+                <input type="submit"
+
+name="button" id="button" value="添加" onclick="addSort();">
+            
+                </div>
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-6">
                     <div class="alert alert-info back-widget-set text-center">
                         
-                        <h3>input&nbsp; </h3>
-                       书名
+                        <h3>书名&nbsp; </h3>
+                       
+                       <input name="bkno" type="text" id="bkno"
+
+size="30"/>
+
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-6">
                     <div class="alert alert-success back-widget-set text-center">
                        
-                        <h3>input</h3>
-                        书条形码
+                        <h3>书条形码</h3>
+                        <input name="bknum" type="text" id="bknum"
+
+size="30"/>
+
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-6">
                     <div class="alert alert-warning back-widget-set text-center">
                         
-                        <h3>input</h3>
-                        作者名
+                        <h3>作者名</h3>
+                        <input name="bkname" type="text"
+
+id="bkname" size="30" />
+
+
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-6">
                     <div class="alert alert-danger back-widget-set text-center">
                        
-                        <h3>input </h3>
-                        出版社
+                        <h3>出版社</h3><input name="bkauthor" type="text"
+
+id="bkauthor" size="30"/>
+
+
+                        
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-6">
                     <div class="alert alert-danger back-widget-set text-center">
                        
-                        <h3>input</h3>
-                        出版社
+                        <h3>定价</h3>
+                        <input name="bkprice" type="text"
+
+id="bkprice" size="10" />
+
+
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-6">
                     <div class="alert alert-danger back-widget-set text-center">
                         
-                        <h3>input</h3>
-                        出版社
+                        <h3> 数量</h3>
+                      <input name="bkyear" type="text" id="bkyear" size="10"
+
+/>
+
+
                     </div>
                 </div>
             </div>
@@ -113,17 +141,17 @@
 
 <tr >
 
-<th width="200">书名</th>
+<th width="300">书名</th>
 
-<th width="90">书条形码</th>
+<th width="200">书条形码</th>
 
-<th width="50">作者名</th>
+<th width="120">作者名</th>
 
-<th width="50">出版社</th>
+<th width="120">出版社</th>
 
-<th width="50">定价</th>
+<th width="120">定价</th>
 
-<th width="50">数量</th>
+<th width="120">数量</th>
 
 
 
@@ -142,6 +170,7 @@
             </div>
         </div>
     </div>
+    </div>
 
 
     <!-- CONTENT-WRAPPER SECTION END-->
@@ -156,7 +185,140 @@
     </section>
 
 
+<script language="javascript" type="text/javascript">
+function myFunction() {
+  // 声明变量
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
 
+  // 循环表格每一行，查找匹配项
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+// 增加成员函数
+
+function addSort() {
+
+var name = document.getElementById("bkno").value;//获取ID属性值为name的元素
+
+// if(name == "" ) {
+
+// return;
+
+// }
+
+//创建元素tr，并设置ID属性为name。即表格中的行
+
+var row = document.createElement("tr");
+
+row.setAttribute("id", document.getElementById("bkno").value);
+
+//创建元素td,并追加为元素tr的子元素
+
+var cell = document.createElement("td");
+
+cell.appendChild(document.createTextNode(document.getElementById("bkno").value));
+
+row.appendChild(cell);
+
+//创建元素td,并追加为元素tr的子元素
+
+var cell = document.createElement("td");
+
+cell.appendChild(document.createTextNode(document.getElementById("bknum").value));
+
+row.appendChild(cell); 
+
+//创建元素td,并追加为元素tr的子元素
+
+var cell = document.createElement("td");
+
+cell.appendChild(document.createTextNode(document.getElementById("bkname").value));
+
+row.appendChild(cell);
+
+//创建元素td,并追加为元素tr的子元素
+
+var cell = document.createElement("td");
+
+cell.appendChild(document.createTextNode(document.getElementById("bkprice").value));
+
+row.appendChild(cell);
+
+//创建元素td,并追加为元素tr的子元素
+
+var cell = document.createElement("td");
+
+cell.appendChild(document.createTextNode(document.getElementById("bkauthor").value));
+
+row.appendChild(cell);
+
+//创建元素td,并追加为元素tr的子元素
+
+var cell = document.createElement("td");
+
+cell.appendChild(document.createTextNode(document.getElementById("bkyear").value));
+
+row.appendChild(cell);
+
+//创建元素td,并追加为元素tr的子元素
+
+
+
+//创建元素删除按钮
+
+var deleteButton = document.createElement("input");
+
+deleteButton.setAttribute("type", "button");
+
+deleteButton.setAttribute("value", "删除");
+
+deleteButton.onclick = function () { deleteSort(name); };
+
+cell = document.createElement("td");
+
+cell.appendChild(deleteButton);
+
+row.appendChild(cell);
+
+//添加deleteButton元素
+
+document.getElementById("sortList").appendChild(row);
+
+//清空输入框
+
+document.getElementById("name").value ="";
+
+}
+
+// 删除成员函数
+
+function deleteSort(id) {
+
+if (id!=null){
+
+var delRow= document.getElementById(id);
+
+var sortList= document.getElementById("sortList");
+
+sortList.removeChild(delRow);
+
+}
+
+}
+
+</script>
 </body>
 
 </html>
