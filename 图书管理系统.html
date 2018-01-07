@@ -18,6 +18,8 @@
     <link href="css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style type="text/css">
         .btn-default {
 
@@ -57,7 +59,32 @@
                         <div class="input-group">
 
                             <input type="text" id="myInput" placeholder="搜索..." class="form-control">
-                            <span onclick="myFunction()" class="input-group-addon btn btn-primary">搜索</span></div>
+                             <div class="input-group-btn">
+                        <button type="button" class="btn btn-default 
+                        dropdown-toggle" data-toggle="dropdown">搜索类别
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right">
+                            <li>
+                                <a href="#" onclick="myFunction()">按书名检索</a>
+                            </li>
+                             <li>
+                                <a href="#" onclick="myFunction_tiao()">按书条形码检索</a>
+                            </li>
+                             <li>
+                                <a href="#" onclick="myFunction_author()">按作者检索</a>
+                            </li>
+                             <li>
+                                <a href="#" onclick="myFunction_pro()">按出版社检索</a>
+                            </li>
+                          
+                           
+                        </ul>
+                    </div><!-- /btn-group -->
+                </div><!-- /input-group -->
+                            
+                            
+<!--                            <span onclick="myFunction()" class="input-group-addon btn btn-primary">搜索</span></div>-->
 
                     </div>
                 </div>
@@ -207,11 +234,68 @@
                         tr[i].style.display = "none";
                     }
                 }
+            }}
+            function myFunction_tiao() {
+            // 声明变量
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // 循环表格每一行，查找匹配项
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
             }
             
             
             
         }
+            function myFunction_author() {
+            // 声明变量
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // 循环表格每一行，查找匹配项
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[2];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }}
+                function myFunction_pro() {
+            // 声明变量
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // 循环表格每一行，查找匹配项
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[3];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }}
         // 增加成员函数
 
         function addSort() {
