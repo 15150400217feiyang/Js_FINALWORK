@@ -20,12 +20,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style type="text/css">
-        .btn-default {
 
-            border-color: slateblue;
-        }
-    </style>
 </head>
 
 <body>
@@ -38,22 +33,17 @@
 				<img src="img/logo.png" width=110px />
 			</a>
             </div>
-
             <div class="right-div">
                 <a href="#" class="btn btn-danger pull-right">LOG ME OUT</a>
             </div>
         </div>
     </div>
-
-
-
     <div class="content-wrapper">
         <div class="container">
             <div class="row pad-botm">
                 <div class="row">
                     <div class="col-md-9">
                         <h4 class="header-line">图书管理系统</h4>
-
                     </div>
                     <div class="col-md-3">
                         <div class="input-group">
@@ -77,8 +67,6 @@
                              <li>
                                 <a href="#" onclick="myFunction_pro()">按出版社检索</a>
                             </li>
-                          
-                           
                         </ul>
                     </div><!-- /btn-group -->
                 </div><!-- /input-group -->
@@ -90,8 +78,6 @@
                 </div>
                 <br>
                 <br>
-
-
                 <div class="row">
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <div class="alert alert-info back-widget-set text-center">
@@ -101,28 +87,20 @@
                     </div>
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <div class="alert alert-success back-widget-set text-center">
-
                             <h3>书条形码</h3>
                             <input name="bknum" type="text" id="bknum" size="15" />
-
                         </div>
                     </div>
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <div class="alert alert-warning back-widget-set text-center">
-
                             <h3>作者名</h3>
                             <input name="bkname" type="text" id="bkname" size="15" />
-
-
-                        </div>
+                       </div>
                     </div>
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <div class="alert alert-danger back-widget-set text-center">
 
                             <h3>出版社</h3><input name="bkauthor" type="text" id="bkauthor" size="15" />
-
-
-
                         </div>
                     </div>
                     <div class="col-md-2 col-sm-4 col-xs-6">
@@ -182,9 +160,6 @@
                                             <th width="120">定价</th>
 
                                             <th width="120">数量</th>
-
-
-
                                         </tr>
 
                                         <tbody id="sortList">
@@ -201,9 +176,6 @@
             </div>
         </div>
     </div>
-
-
-
     <section class="footer-section">
         <div class="container">
             <div class="row">
@@ -213,9 +185,65 @@
             </div>
         </div>
     </section>
+    <div id="duohang_bg">
+        <div id="duohang">
+            <div id="close" onclick="GuanBi()">X</div>
+            <section class="main">
+			
+				 <form action="" method="post" name="my_f1" onsubmit="return check(this);"class="form-2">
+					<h1><span class="log-in">注册</span></h1>
+					<p class="">
+						<label for="login"><i class="icon-user"></i>用户名</label>
+						<input type="text" name="login" placeholder="Username" required="required" >
+					</p>
+					<p class="">
+						<label for="password"><i class="icon-lock"></i>密码</label>
+						<input type="password" name="passwd1" placeholder="Password" class="showpassword" required="true" >
+					</p>
+					<p class="">
+						<label for="password"><i class="icon-lock"></i>再次输入密码(密码请保持一致)</label>
+						<input type="password" name="passwd2" placeholder="Password" class="showpassword" required="true" >
+					</p>
+					<p class="">
+						<label for="password"><i class="icon-lock"></i>邮箱</label>
+						<input type="email" name="password" placeholder="Email"required="required"  >
+					</p>
+					
+					<p class="clearfix"> 
+						<input type="submit" name="submit" value="登录">    
+						<input type="reset" name="submit" value="重填">
+					</p>
+				</form>
+			</section>
+		
+        </div>
+
+    </div>
 
 
     <script language="javascript" type="text/javascript">
+        function check(form) {
+            var p1 = form.passwd1;
+            var p2 = form.passwd2;
+            if (p1.value != p2.value) {
+                p2.oninvalid();
+                return false;
+            }
+            return true;
+        }
+        onload = function() {
+            var p2 = document.forms["my_f1"].passwd2;
+            p2.oninvalid = function() {
+                this.setCustomValidity("密码不一致，请重新输入");
+            }
+            p2.oninput = function() {
+                this.setCustomValidity("");
+            }
+ 
+        }
+        
+        
+        
         function myFunction() {
             // 声明变量
             var input, filter, table, tr, td, i;
@@ -409,6 +437,7 @@
             }
 
         }
+        
     </script>
 
 </body>
