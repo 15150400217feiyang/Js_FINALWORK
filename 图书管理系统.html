@@ -34,7 +34,8 @@
 			</a>
             </div>
             <div class="right-div">
-                <a href="#" class="btn btn-danger pull-right">LOG ME OUT</a>
+           
+               <a href="tencent://message/?uin=1249733986&Site=&Menu=yes"class="btn btn-danger pull-right">联系我们</a>
             </div>
         </div>
     </div>
@@ -190,7 +191,7 @@
             <div id="close" onclick="GuanBi()">X</div>
             <section class="main">
 			
-				 <form action="" method="post" name="my_f1" onsubmit="return check(this);"class="form-2">
+				 <form action="" method="post" name="my_f1" onsubmit="return check(this);"class="form-2" id="form-2" >
 					<h1><span class="log-in">注册</span></h1>
 					<p class="">
 						<label for="login"><i class="icon-user"></i>用户名</label>
@@ -210,8 +211,26 @@
 					</p>
 					
 					<p class="clearfix"> 
-						<input type="submit" name="submit" value="登录">    
-						<input type="reset" name="submit" value="重填">
+						<input type="submit" name="submit" value="注册" >    
+						<a href="#" class="log-twitter" onclick="GuanBi()">有账号直接登录</a>
+					</p>
+				</form>
+			</section>
+			<section class="main">
+				<form class="form-2"id="form-3" >
+					<h1><span class="log-in">Log in</span></h1>
+					<p class="float">
+						<label for="login"><i class="icon-user"></i>用户名</label>
+						<input type="text" name="login" placeholder="Username or email" required="true" id="user">
+					</p>
+					<p class="float">
+						<label for="password"><i class="icon-lock"></i>密码</label>
+						<input type="password" name="password" placeholder="Password" class="showpassword" required="true" id="mima">
+					</p>
+					<p class="clearfix"> 
+						<a href="#" class="log-twitter" onclick="GuanBi2()">登录</a>    
+						<input type="reset" name="submit" value="重填" >
+						
 					</p>
 				</form>
 			</section>
@@ -232,6 +251,7 @@
             return true;
         }
         onload = function() {
+       
             var p2 = document.forms["my_f1"].passwd2;
             p2.oninvalid = function() {
                 this.setCustomValidity("密码不一致，请重新输入");
@@ -240,6 +260,30 @@
                 this.setCustomValidity("");
             }
  
+        }
+        function WriteNotes() {
+            duohang_bg.style.display = "block";
+        }
+
+        function GuanBi() {
+            //        var close_btn=document.getElementById("close");
+            duohang_bg.style.display = "block";
+            document.getElementById("form-2").style.display="none";
+           document.getElementById("form-3").style.display="block";
+        }
+
+        function GuanBi2() {
+            //        var close_btn=document.getElementById("close");
+            var user=document.getElementById("user").value;
+            var mima=document.getElementById("mima").value;
+            if((user=="")||(mima=="")){
+            alert("不能为空");
+            }
+            else{
+                duohang_bg.style.display = "none";
+                alert("登陆成功");
+            }
+        
         }
         
         
