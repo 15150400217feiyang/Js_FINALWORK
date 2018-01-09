@@ -10,9 +10,9 @@ body {
     -webkit-border-radius:0px;
 }
 .content-wrapper {
-    margin-top: 40px;
-    min-height:800px;
-    padding-bottom:90px;
+    margin-top: 0px;
+    min-height:520px;
+    padding-bottom:40px;
 }
 .header-line {
     font-weight:900;
@@ -64,7 +64,7 @@ border-color: rgba(155, 153, 153, 0.23);
     font-size:13px;
       background-color: #f7f7f7;
       text-align:right;
-       border-top:5px solid #9170E4;
+       border-top:2px solid orange;
 
 }
 
@@ -283,7 +283,7 @@ border-color: rgba(155, 153, 153, 0.23);
         }
         #duohang_bg {
         width: 1545px;
-        height: 1150px;
+        height: 850px;
         position: absolute;
         top: 0;
         background: rgba(0, 0, 0, 0.5);
